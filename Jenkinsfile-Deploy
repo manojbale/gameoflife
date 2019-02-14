@@ -1,0 +1,30 @@
+
+
+
+
+
+
+node ('192.168.10.251')	
+
+{						
+
+
+    stage('Sourcecode Checkout') {			  
+	
+	checkout scm
+	                             }
+								 
+	stage ('Deploy gameoflife') {
+	
+	            sh '''
+				#docker stop gameoflife
+				#docker rm gameoflife				
+				docker run -d -p 8889:8080 --name gameoflife gameoflife:$TAG
+				'''
+				                }
+}
+
+
+
+
+
