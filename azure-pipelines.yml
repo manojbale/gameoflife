@@ -14,7 +14,7 @@ stages:
     jobs: 
      - job: Build_Artifact
 
-      steps: 
+       steps: 
        - task: CmdLine@2
          inputs:
           script: |
