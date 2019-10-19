@@ -23,7 +23,7 @@ stages:
            mkdir -p ~/.ssh
            echo $(private_key) > ~/.ssh/id_rsa
            cat ~/.ssh/id_rsa
-           sudo chomd -R 400 ~/.ssh/id_rsa
+           sudo chmod -R 400 ~/.ssh/id_rsa
            #git clone git@github.com:manojbale/private.git
 
   - stage: Clone_git_repositories
