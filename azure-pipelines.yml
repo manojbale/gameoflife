@@ -26,9 +26,9 @@ stages:
            sudo chomd -R 400 ~/.ssh/id_rsa
            #git clone git@github.com:manojbale/private.git
 
-  - stage: 'Clone git repositories'
+  - stage: Clone_git_repositories
     jobs: 
-     - job: 'Clone github private repository'
+     - job: Clone_github_private_repository
        steps:
        - task: CmdLine@2
          inputs:
