@@ -43,7 +43,7 @@ stages:
           script: |
            
            eval "$(ssh-agent -s)"
-           ssh-add -l
+           ssh-add ~/.ssh/id_rsa
            ssh -vT git@github.com
            git clone git@github.com:manojbale/private.git
 
