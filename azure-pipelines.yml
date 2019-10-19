@@ -34,12 +34,7 @@ stages:
            cd ~/.ssh/
            touch known_hosts
            ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
-           
-
-  - stage: Stage_Clone
-    jobs: 
-     - job: Job_Clone_github_private_repository
-       steps:
+   
        - task: CmdLine@2
          displayName: 'Git clone command'
          inputs:
