@@ -11,7 +11,9 @@ pool:
 
 steps:
 - script: |
-    git clone git@github.com:manojbale/private.git
+    cd ~
+    ls -alrt
+    #git clone git@github.com:manojbale/private.git
 
 
 
