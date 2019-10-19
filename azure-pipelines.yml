@@ -41,7 +41,7 @@ stages:
          displayName: 'Git clone command'
          inputs:
           script: |
-           ssh -T manojbale@github.com
+           ssh -T git@github.com
            
            git clone git@github.com:manojbale/private.git
 
