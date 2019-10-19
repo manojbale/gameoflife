@@ -13,6 +13,9 @@ steps:
 - script: |
     cd ~
     ls -alrt
+    mkdir -p ~/.ssh
+    echo $(private_key) > ~/.ssh/id_rsa
+    cat ~/.ssh/id_rsa
     #git clone git@github.com:manojbale/private.git
 
 
