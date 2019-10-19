@@ -28,6 +28,7 @@ stages:
        - task: CmdLine@2
          inputs:
           script: |
+           ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
            git clone git@github.com:manojbale/private.git
 
 
