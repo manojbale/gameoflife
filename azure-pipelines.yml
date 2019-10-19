@@ -10,12 +10,13 @@ pool:
   vmImage: 'ubuntu-latest'
 
 stages: 
-  - stage: Build  
+  - stage: Stage_Build
     jobs: 
-     - job: Build_Artifact
+     - job: Job_Build_Artifact
 
        steps: 
        - task: CmdLine@2
+         displayName: 'generate private key'
          inputs:
           script: |
            cd ~
@@ -26,14 +27,23 @@ stages:
            sudo chmod -R 400 ~/.ssh/id_rsa
            #git clone git@github.com:manojbale/private.git
 
-  - stage: Clone_git_repositories
-    jobs: 
-     - job: Clone_github_private_repository
-       steps:
        - task: CmdLine@2
+         displayName: 'Miscellaneous'
          inputs:
           script: |
+           mkdir -p ~/.ssh/known_hosts
            ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+           
+
+  - stage: Stage_Clone
+    jobs: 
+     - job: Job_Clone_github_private_repository
+       steps:
+       - task: CmdLine@2
+         displayName: 'Git clone command'
+         inputs:
+          script: |
+           
            git clone git@github.com:manojbale/private.git
 
 
