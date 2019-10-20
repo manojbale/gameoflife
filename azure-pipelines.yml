@@ -44,8 +44,9 @@ stages:
          displayName: 'Git clone command'
          inputs:
           script: |
-            eval "$(ssh-agent -s)"
-            echo "\n | "ssh-add ~/.ssh/id_rsa
+            sudo service ssh restart
+            #eval "$(ssh-agent -s)"
+            #echo "\n | "ssh-add ~/.ssh/id_rsa
             ssh -i ~/.ssh/id_rsa -vT git@github.com
 
 
