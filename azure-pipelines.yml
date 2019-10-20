@@ -49,10 +49,10 @@ stages:
             #StrictModes no
             IdentityFile ~/.ssh/id_rsa
             EOF
-            ssh -F ~/.ssh/config -T git@github.com
+            ssh -F ~/.ssh/config -vT git@github.com
 
            
-            sudo git clone git@github.com:manojbale/private.git
+            git clone git@github.com:manojbale/private.git
 
 
 
