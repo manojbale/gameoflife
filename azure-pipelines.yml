@@ -44,27 +44,7 @@ stages:
          displayName: 'Git clone command'
          inputs:
           script: |
-           cat /etc/ssh/sshd_config | grep StrictModes
-           sudo sed "s/StrictModes yes/StrictModes no/g" /etc/ssh/sshd_config
-           cat /etc/ssh/sshd_config | grep StrictModes
-
-
-           sudo tee ~/.ssh/config <<'EOF'
-           Host github.com
-           StrictHostKeyChecking no
-           #StrictModes no
-           IdentityFile ~/.ssh/id_rsa
-           EOF
-
-           cat ~/.ssh/config
-           ssh -F ~/.ssh/config -T git@github.com
-           #eval "$(ssh-agent -s)"
-           #ssh-add -k
-           #sshd -T
-           #ssh-add ~/.ssh/id_rsa
-           #ssh -o StrictHostKeyChecking=no
-           #ssh -vT git@github.com
-           #git clone git@github.com:manojbale/private.git
+            ssh -vT git@github.com
 
 
 
