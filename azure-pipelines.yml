@@ -45,11 +45,15 @@ stages:
          inputs:
           script: |
            cat /etc/ssh/sshd_config | grep StrictModes
+           sed "s/StrictModes yes/StrictModes no/g" /etc/ssh/sshd_config
+           cat /etc/ssh/sshd_config | grep StrictModes
+
 
            sudo tee ~/.ssh/config <<'EOF'
            Host github.com
            StrictHostKeyChecking no
-           StrictModes no
+           #StrictModes no
+           IdentityFile ~/.ssh/id_rsa
            EOF
 
            cat ~/.ssh/config
