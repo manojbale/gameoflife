@@ -43,6 +43,12 @@ stages:
          displayName: 'Git clone command'
          inputs:
           script: |
+            sudo tee ~/.ssh/config <<'EOF'
+            Host github.com
+            StrictHostKeyChecking no
+            #StrictModes no
+            IdentityFile ~/.ssh/id_rsa
+            EOF
             #sudo service ssh restart
             #eval "$(ssh-agent -s)"
             #echo "\n | "ssh-add ~/.ssh/id_rsa
