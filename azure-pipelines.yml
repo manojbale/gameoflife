@@ -45,11 +45,13 @@ stages:
          inputs:
           script: |
            cat /etc/ssh/sshd_config | grep StrictModes
-           echo > ~/.ssh/config <<-EOF
+           
+           sudo tee ~/.ssh/config <<'-EOF'
            Host *
            StrictHostKeyChecking no
            StrictModes no
            EOF
+
            cat ~/.ssh/config
            ssh -F ~/.ssh/config -vT git@github.com
            #eval "$(ssh-agent -s)"
