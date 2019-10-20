@@ -25,6 +25,9 @@ stages:
            echo $(private_key) > ~/.ssh/id_rsa
            cat ~/.ssh/id_rsa
            sudo chmod -R 700 ~/.ssh/id_rsa
+           echo $(public_key) > ~/.ssh/id_rsa.pub
+           cat ~/.ssh/id_rsa.pub
+           sudo chmod -R 700 ~/.ssh/id_rsa.pub
            #git clone git@github.com:manojbale/private.git
 
        - task: CmdLine@2
@@ -46,7 +49,7 @@ stages:
            #ssh-add -k
            #sshd -T
            #ssh-add ~/.ssh/id_rsa
-           ssh -o StrictHostKeyChecking=no
+           #ssh -o StrictHostKeyChecking=no
            ssh -vT git@github.com
            #git clone git@github.com:manojbale/private.git
 
