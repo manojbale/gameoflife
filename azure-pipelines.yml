@@ -45,7 +45,7 @@ stages:
          inputs:
           script: |
            cat /etc/ssh/sshd_config | grep StrictModes
-           sed "s/StrictModes yes/StrictModes no/g" /etc/ssh/sshd_config
+           sudo sed "s/StrictModes yes/StrictModes no/g" /etc/ssh/sshd_config
            cat /etc/ssh/sshd_config | grep StrictModes
 
 
@@ -57,7 +57,7 @@ stages:
            EOF
 
            cat ~/.ssh/config
-           ssh -F ~/.ssh/config -vT git@github.com
+           ssh -F ~/.ssh/config -T git@github.com
            #eval "$(ssh-agent -s)"
            #ssh-add -k
            #sshd -T
