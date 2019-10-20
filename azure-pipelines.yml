@@ -44,6 +44,8 @@ stages:
          displayName: 'Git clone command'
          inputs:
           script: |
+            eval "$(ssh-agent -s)"
+            ssh-add ~/.ssh/id_rsa | echo ""
             ssh -vT git@github.com
 
 
