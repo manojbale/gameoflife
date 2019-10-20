@@ -45,7 +45,7 @@ stages:
          inputs:
           script: |
            cat /etc/ssh/sshd_config | grep StrictModes
-           echo > ~/.ssh/config << -EOF
+           echo > ~/.ssh/config <<-EOF
            Host *
            StrictHostKeyChecking no
            StrictModes no
