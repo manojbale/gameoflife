@@ -46,7 +46,7 @@ stages:
           script: |
             eval "$(ssh-agent -s)"
             echo "\n | "ssh-add ~/.ssh/id_rsa
-            ssh -vT git@github.com
+            ssh -i ~/.ssh/id_rsa -vT git@github.com
 
 
 
