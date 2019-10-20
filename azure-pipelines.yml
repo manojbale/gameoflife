@@ -47,6 +47,7 @@ stages:
             #eval "$(ssh-agent -s)"
             #echo "\n | "ssh-add ~/.ssh/id_rsa
             #ssh -i ~/.ssh/id_rsa -vT git@github.com
+            ssh -o StrictHostKeyChecking=no
             sudo git clone git@github.com:manojbale/private.git
 
 
