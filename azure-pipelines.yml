@@ -42,13 +42,13 @@ stages:
          inputs:
           script: |
            
-           eval "$(ssh-agent -s)"
+           #eval "$(ssh-agent -s)"
            #ssh-add -k
-           sshd -T
+           #sshd -T
            #ssh-add ~/.ssh/id_rsa
            ssh -o StrictHostKeyChecking=no
            ssh -vT git@github.com
-           git clone git@github.com:manojbale/private.git
+           #git clone git@github.com:manojbale/private.git
 
 
 
