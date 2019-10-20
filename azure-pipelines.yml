@@ -44,13 +44,13 @@ stages:
          displayName: 'Git clone command'
          inputs:
           script: |
-           
+           cat /etc/ssh/sshd_config | grep StrictModes
            #eval "$(ssh-agent -s)"
            #ssh-add -k
            #sshd -T
            #ssh-add ~/.ssh/id_rsa
            #ssh -o StrictHostKeyChecking=no
-           ssh -vT git@github.com
+           #ssh -vT git@github.com
            #git clone git@github.com:manojbale/private.git
 
 
