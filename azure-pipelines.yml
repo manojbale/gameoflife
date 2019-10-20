@@ -47,7 +47,7 @@ stages:
            cat /etc/ssh/sshd_config | grep StrictModes
 
            sudo tee ~/.ssh/config <<'EOF'
-           Host *
+           Host github.com
            StrictHostKeyChecking no
            StrictModes no
            EOF
