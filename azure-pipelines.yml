@@ -43,7 +43,7 @@ stages:
           script: |
            
            eval "$(ssh-agent -s)"
-           ssh-add -k
+           #ssh-add -k
            sshd -T
            #ssh-add ~/.ssh/id_rsa
            ssh -o StrictHostKeyChecking=no
