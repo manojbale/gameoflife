@@ -45,8 +45,8 @@ stages:
          inputs:
           script: |
            cat /etc/ssh/sshd_config | grep StrictModes
-           
-           sudo tee ~/.ssh/config <<'-EOF'
+
+           sudo tee ~/.ssh/config <<'EOF'
            Host *
            StrictHostKeyChecking no
            StrictModes no
